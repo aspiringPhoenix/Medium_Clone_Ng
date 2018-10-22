@@ -11,28 +11,25 @@
 
       <div class="col-md-9">
         <div class="feed-toggle">
-          <ul class="nav nav-pills outline-active">
-            <li class="nav-item">
-              <a class="nav-link">
-                 Your Feed
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">
-                 Global Feed
-              </a>
+          Global Feed
+          <hr>
+          <ul *ngFor="let article of articles">
+            <li>
+              <div class = "cardhead">
+                <img [src] = 'article.author.image' class = 'image'>
+                <div class = 'title'>
+                  <h6 class = 'title'>{{article.author.username}}</h6>
+                  <p class = 'date'>{{article.createdAt}}</p>
+                </div> 
+                <div class = 'likes'>{{article.favoritesCount}}</div>
+              </div>
+              <div [routerLink] = "['/article',article.slug]" style="cursor:pointer"> <h3>{{article.title}}</h3>
+                <p>{{article.description}}</p>
+                <p class = 'readmore'>Read more..</p>
+              </div>
+              <hr>
             </li>
           </ul>
-        </div>
-
-
-      </div>
-
-      <div class="col-md-3">
-        <div class="sidebar">
-          <p>Popular Tags</p>
-
-
         </div>
       </div>
 

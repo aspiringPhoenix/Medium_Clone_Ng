@@ -17,8 +17,9 @@ import {
     { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
     ApiService,
     UserService,
-    JwtService
+    JwtService,
   ],
-  declarations: []
+  declarations: [
+  ]
 })
 export class SharedModule { }
