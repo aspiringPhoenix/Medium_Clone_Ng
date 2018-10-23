@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute, Router } from '@angular/router';
 import { User, UserService,JwtService } from '../../shared';
 
 @Component({
@@ -13,7 +13,15 @@ export class HeaderComponent implements OnInit {
       this.validator=true;
     }
   }
+  logOut():void{
+    console.log("reached");
+    this.jwtService.destroyToken();
+    this.router.navigateByUrl('/');
+    
+  }
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
     private userService: UserService,
     private jwtService: JwtService,
   ) {}

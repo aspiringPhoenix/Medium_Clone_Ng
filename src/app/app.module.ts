@@ -10,6 +10,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { AuthComponent } from './auth/auth/auth.component';
 import { SharedModule } from './shared/shared.module';
 import { ArticleComponent } from './article/article.component';
+import { YourfeedComponent } from './yourfeed/yourfeed.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ArticleComponent } from './article/article.component';
     FooterComponent,
     AuthComponent,
     ArticleComponent,
+    YourfeedComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,7 @@ import { ArticleComponent } from './article/article.component';
       {path:'',redirectTo:'home',pathMatch:'full'},
       {path: 'login',component: AuthComponent},
       {path: 'register', component: AuthComponent},
+      {path: 'feed', component: YourfeedComponent},
       {path: 'article/:id', component: ArticleComponent},
       {path:'**',redirectTo:'home',pathMatch:'full'}
 

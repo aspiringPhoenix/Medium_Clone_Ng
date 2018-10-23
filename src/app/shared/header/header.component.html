@@ -35,11 +35,16 @@
           <i class="ion-compose"></i>&nbsp;New Article
         </a>
       </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/feed" routerLinkActive="active">
+            <i class="icon ion-star"></i>&nbsp;your feed
+          </a>
+        </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink="/settings" routerLinkActive="active">
-          <i class="ion-gear-a"></i>&nbsp;Settings
-        </a>
+          <button (click)="logOut()">
+          <i class="icon ion-log-out"></i>&nbsp;LogOut
+        </button>
       </li>
 
       <li class="nav-item">
