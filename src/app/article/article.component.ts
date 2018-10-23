@@ -17,7 +17,8 @@ export class ArticleComponent implements OnInit {
     this.route.url.subscribe(data => {
       this.slug = data[data.length - 1].path;
     });
-    this.apiService.get(`/articles/this.slug`)
+    let temp:string="/articles/"+this.slug;
+    this.apiService.get(temp)
       .subscribe(
         data => this.setArticle(data),
         err=>this.purgeArticle()
@@ -26,7 +27,6 @@ export class ArticleComponent implements OnInit {
   purgeArticle():void{}
   setArticle(data:any){
     this.article=data.article;
-    console.log(this.article);
   }
 
 }
